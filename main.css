@@ -329,8 +329,8 @@ body {
 	left: 0;
 	padding: 3rem;
 }
-/*@media (max-width: 80rem) {
+@media (max-width: 80rem) {
 	.overlay {
 		display: flex;
 	}
-}*/
+}
