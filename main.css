@@ -200,7 +200,8 @@ body {
 /* Player */
 .player {
 	color: var(--c-black);
-	padding: 2rem;
+	padding: 3rem 2rem 2rem;
+	position: relative;
 	border-radius: 1rem;
 }
 .player:nth-of-type(1) {
@@ -222,8 +223,9 @@ body {
 	background-color: var(--c-white);
 }
 .player__name {
+	font-size: 2rem;
 	text-align: center;
-	padding: 1rem;
+	padding: 0.5rem 1rem;
 	margin: 0;
 	border-radius: 1rem;
 }
@@ -260,7 +262,7 @@ body {
 	grid-template: 
 		'a b c' auto
 		'd b e' auto
-		'f g h' auto / 1fr 1fr 1fr;
+		'f g h' auto / 10rem 1fr 10rem;
 	margin-top: 2rem;
 }
 .counter__input {
