@@ -177,15 +177,15 @@ body {
 	margin: 2rem;
 }
 
-/* Player button */
-.player-button {
+/* Add button */
+.add-button {
 	font-weight: bold;
 	padding: 1rem;
 	border: 1px solid var(--c-white);
 	border-radius: 1rem;
 }
-.player-button:hover,
-.player-button:focus {
+.add-button:hover,
+.add-button:focus {
 	background-color: var(--c-white);
 	color: var(--c-black);
 }
@@ -193,7 +193,7 @@ body {
 /* Player */
 .player {
 	color: var(--c-black);
-	padding: 2rem 4rem;
+	padding: 2rem;
 	border-radius: 1rem;
 }
 .player:nth-of-type(1) {
