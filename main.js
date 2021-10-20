@@ -23,26 +23,41 @@ document.querySelectorAll('.counter').forEach(($counter) => {
 	new Counter($counter);
 });
 
-// Add player button
-class addButton {
+// Player
+class Player {
 	constructor($el) {
 		this.$el = $el;
 		this.$players = document.querySelector('.players');
+		this.$button = document.querySelector('.add-button');
 		this.playerTemplate = document.querySelector('.player-template').content;
+
+		const clone = document.importNode(this.playerTemplate, true);
+		this.$el.appendChild(clone);
+
+		const $currentCounter = this.$players.querySelector('.player:last-of-type');
+		new Counter($currentCounter);
+
+		this.$el.appendChild(this.$button);
+	}
+}
+
+new Player(document.querySelector('.players'));
+
+// Add button
+class AddButton {
+	constructor($el) {
+		this.$el = $el;
+		this.$players = document.querySelector('.players');
 		this.maxPlayers = 6;
 
 		this.$el.addEventListener('click', () => {
 			const currentPlayers = document.querySelectorAll('.player').length;
 
 			if(currentPlayers < this.maxPlayers) {
-				const clone = document.importNode(this.playerTemplate, true);
-				this.$players.appendChild(clone);
-
-				const $currentCounter = this.$players.querySelector('.player:last-of-type');
-				new Counter($currentCounter);
+				new Player(this.$players);
 			}
 		});
 	}
 }
 
-new addButton(document.querySelector('.add-button'));
+new AddButton(document.querySelector('.add-button'));
