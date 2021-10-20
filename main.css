@@ -45,6 +45,12 @@ html {
 	/*text-shadow: none;*/
 }
 
+/* Focus */
+*:focus {
+	outline: 2px solid var(--c-orange);
+	outline-offset: 5px;
+}
+
 /* Media */
 img,
 svg,
