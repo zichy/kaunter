@@ -12,19 +12,12 @@ $counter.forEach((counter) => {
 	lifeCount = isNaN(lifeCount) ? 0 : lifeCount;
 	
 	$buttons.forEach(($button) => {
+		const number = parseInt($button.dataset.count);
+
 		$button.addEventListener('click', (e) => {
 			e.preventDefault();
 
-			if($button.dataset.count === '+1') {
-				lifeCount++;
-			} else if($button.dataset.count === '-1') {
-				lifeCount--;
-			} else if($button.dataset.count === '+5') {
-				lifeCount += 5;
-			} else if($button.dataset.count === '-5') {
-				lifeCount -= 5;
-			}
-
+			lifeCount = lifeCount + number;
 			$life.value = lifeCount;
 		});
 	});
