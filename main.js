@@ -43,6 +43,20 @@ class Player {
 
 new Player(document.querySelector('.players'));
 
+// Delete button
+class DeleteButton {
+	constructor($el) {
+		this.$el = $el;
+		this.$player = $el.closest('.player');
+		
+		this.$el.addEventListener('click', () => {
+			this.$player.remove();
+		});
+	}
+}
+
+new DeleteButton(document.querySelector('.player__delete'));
+
 // Add button
 class AddButton {
 	constructor($el) {
@@ -52,10 +66,12 @@ class AddButton {
 
 		this.$el.addEventListener('click', () => {
 			const currentPlayers = document.querySelectorAll('.player').length;
-
 			if(currentPlayers < this.maxPlayers) {
 				new Player(this.$players);
 			}
+
+			const $currentDeleteButton = this.$players.querySelector('.player:last-of-type .player__delete');
+			new DeleteButton($currentDeleteButton);
 		});
 	}
 }

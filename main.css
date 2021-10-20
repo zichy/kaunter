@@ -231,6 +231,28 @@ body {
 	background-color: rgba(0, 0, 0, 0.1);
 	outline: none;
 }
+.player__delete {
+	background-color: rgba(0, 0, 0, 0.1);
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 3rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-radius: 1rem;
+}
+.player__delete:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.player:first-of-type .player__delete,
+.player:not(:last-of-type) .player__delete {
+	display: none;
+}
 
 /* Counter */
 .counter {
