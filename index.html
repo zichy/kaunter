@@ -8,13 +8,15 @@
 </head>
 
 <body>
-	<header>
+	<header class="bar">
 		<h1 class="hidden-visually">MagiCount</h1>
+
+		<button class="player-button">Add player</button>
+
+		<a href="https://github.com/zichy/magicount">magicount</a>
 	</header>
 
 	<div class="players"></div>
-
-	<button class="player-button">Add player</button>
 
 	<template class="player-template">
 		<article class="player">
@@ -34,10 +36,6 @@
 			</form>
 		</article>
 	</template>
-
-	<footer class="footer">
-		<p>Powered by <a href="https://github.com/zichy/magicount">magicount</a>
-	</footer>
 
 	<script src="main.js"></script>
 
