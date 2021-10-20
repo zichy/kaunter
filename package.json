@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "hyperscript": "^2.0.2",
+    "mustache": "^4.2.0"
+  }
+}

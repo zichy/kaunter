@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>MagiCount</title>
+
+	<link rel="stylesheet" type="text/css" href="main.css" media="screen">
+</head>
+
+<body>
+	<header>
+		<h1 class="hidden-visually">MagiCount</h1>
+	</header>
+
+	<div class="players"></div>
+
+	<button class="player-button">Add player</button>
+
+	<template class="player-template">
+		<article class="player">
+			<h2 class="player__name" contenteditable spellcheck="false">Player name</h2>
+			<form class="counter">
+				<div class="counter__input">
+					<label class="hidden-visually" for="player-1">Life points</label>
+					<input class="counter__life" value="20" min="-999" max="999" maxlength="4" type="number" id="player-1">
+				</div>
+
+				<button class="counter__button counter__button--1" data-count="-1">-1</button>
+				<button class="counter__button counter__button--2" data-count="-5">-5</button>
+				<button class="counter__button counter__button--3" data-count="+1">+1</button>
+				<button class="counter__button counter__button--4" data-count="+5">+5</button>
+
+				<button class="counter__reset" type="reset">Reset</button>
+			</form>
+		</article>
+	</template>
+
+	<footer class="footer">
+		<p>Powered by <a href="https://github.com/zichy/magicount">magicount</a>
+	</footer>
+
+	<script src="main.js"></script>
+
+</body>
+</html>
