@@ -40,9 +40,9 @@ html {
 
 /* Selection */
 ::selection {
-	/*background: var(--c-brown-medium);*/
-	/*color: #fff;*/
-	/*text-shadow: none;*/
+	background: var(--c-orange);
+	color: var(--c-black);
+	text-shadow: none;
 }
 
 /* Focus */
@@ -125,10 +125,7 @@ button {
 	outline: none;
 	padding: 0;
 	text-decoration: none;
-	-webkit-user-select: text;
-	-moz-user-select: text;
-	-ms-user-select: text;
-	user-select: text;
+	user-select: none;
 }
 
 
