@@ -155,6 +155,12 @@ body {
 	padding: 0;
 	margin: 0;
 }
+@media (max-width: 80rem) {
+	body {
+		overflow: hidden;
+	}
+}
+
 
 /* Header bar */
 .bar {
@@ -285,7 +291,22 @@ body {
 	border-radius: 1rem;
 }
 
-/* Footer */
-.footer {
-	text-align: center;
+/* Overlay */
+.overlay {
+	background-color: rgba(0, 0, 0, 0.95);
+	font-size: 3rem;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 3rem;
 }
+/*@media (max-width: 80rem) {
+	.overlay {
+		display: flex;
+	}
+}*/
