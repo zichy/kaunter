@@ -225,6 +225,7 @@ body {
 .player__name {
 	font-size: 2rem;
 	text-align: center;
+	height: 4rem;
 	padding: 0.5rem 1rem;
 	margin: 0;
 	border-radius: 1rem;
@@ -232,6 +233,9 @@ body {
 .player__name:focus {
 	background-color: rgba(0, 0, 0, 0.1);
 	outline: none;
+}
+.player__name br {
+	display: none;
 }
 .player__delete {
 	background-color: rgba(0, 0, 0, 0.1);
