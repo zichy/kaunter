@@ -4,7 +4,7 @@
 
 :root {
 	--f-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-	--f-mono: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+	--f-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 	--c-white: #ffffff;
 	--c-black: #0c0f11;
 	--c-orange: #ff6000;
@@ -153,7 +153,7 @@ button {
 body {
 	background-color: var(--c-black);
 	color: var(--c-white);
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	line-height: 1.5;
 	padding: 0;
 	margin: 0;
@@ -175,8 +175,8 @@ body {
 	z-index: 1;
 }
 
-/* Player list */
-.players {
+/* Content */
+.content {
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -185,19 +185,59 @@ body {
 	padding: 2rem;
 }
 
+/* Intro */
+.intro {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border-radius: 1rem;
+}
+.intro:nth-child(7) {
+	display: none;
+}
+.intro__inner {
+	padding: 3.5rem 2rem 1rem;
+}
+.intro__headline {
+	font-size: 2rem;
+	text-align: center;
+	margin: 0;
+}
+.intro__actions {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	border-top:  2px solid rgba(255, 255, 255, 0.1);
+}
+.intro__label {
+	font-weight: bold;
+	text-align: center;
+	padding: 2rem 2rem 1rem;
+	margin: 0;
+}
+.intro__list {
+	list-style: none;
+	display: flex;
+	flex-grow: 1;
+	width: 100%;
+	padding-left: 0;
+	margin: 0;
+}
+.intro__list-item {
+	display: flex;
+	flex-grow: 1;
+}
+
 /* Add button */
 .add-button {
 	font-size: 2rem;
 	font-weight: bold;
+	flex-grow: 1;
 	padding: 1rem;
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	border-radius: 1rem;
 }
 .add-button:hover {
 	background-color: rgba(255, 255, 255, 0.1);
-}
-.add-button:nth-child(7) {
-	display: none;
 }
 
 /* Player */
@@ -246,7 +286,7 @@ body {
 	background-color: rgba(0, 0, 0, 0.1);
 	font-size: 1.2rem;
 	line-height: 1;
-	display: flex;
+	display: block;
 	align-items: center;
 	justify-content: center;
 	padding: 0.5rem 1rem;
@@ -254,9 +294,14 @@ body {
 	top: 0;
 	right: 0;
 	border-radius: 1rem;
+	opacity: 0;
 }
 .player__delete:hover {
 	background-color: rgba(0, 0, 0, 0.2);
+}
+.player__delete:focus,
+.player:hover .player__delete {
+	opacity: 1;
 }
 .player:first-of-type .player__delete,
 .player:not(:last-of-type) .player__delete {
@@ -346,6 +391,6 @@ body {
 }
 @media (max-width: 80rem) {
 	.overlay {
-		display: flex;
+		/*display: flex;*/
 	}
 }

@@ -4,6 +4,7 @@ class Counter {
 		this.$el  = $el;
 		this.$buttons = $el.querySelectorAll('.counter__button');
 		this.$life = $el.querySelector('.counter__life');
+
 		let lifeCount = parseInt(this.$life.value, 10);
 		lifeCount = isNaN(lifeCount) ? 0 : lifeCount;
 
@@ -27,21 +28,19 @@ document.querySelectorAll('.counter').forEach(($counter) => {
 class Player {
 	constructor($el) {
 		this.$el = $el;
-		this.$players = document.querySelector('.players');
-		this.$button = document.querySelector('.add-button');
+		this.$content = document.querySelector('.content');
+		this.$intro = document.querySelector('.intro');
 		this.playerTemplate = document.querySelector('.player-template').content;
 
 		const clone = document.importNode(this.playerTemplate, true);
 		this.$el.appendChild(clone);
 
-		const $currentCounter = this.$players.querySelector('.player:last-of-type');
+		const $currentCounter = this.$content.querySelector('.player:last-of-type');
 		new Counter($currentCounter);
 
-		this.$el.appendChild(this.$button);
+		this.$el.appendChild(this.$intro);
 	}
 }
-
-new Player(document.querySelector('.players'));
 
 // Delete button
 class DeleteButton {
@@ -55,25 +54,27 @@ class DeleteButton {
 	}
 }
 
-new DeleteButton(document.querySelector('.player__delete'));
-
 // Add button
 class AddButton {
 	constructor($el) {
 		this.$el = $el;
-		this.$players = document.querySelector('.players');
+		this.$button = this.$el.querySelector('.add-button');
+		this.$content = document.querySelector('.content');
 		this.maxPlayers = 6;
 
-		this.$el.addEventListener('click', () => {
+		this.$button.addEventListener('click', () => {
 			const currentPlayers = document.querySelectorAll('.player').length;
 			if(currentPlayers < this.maxPlayers) {
-				new Player(this.$players);
+				new Player(this.$content);
 			}
 
-			const $currentDeleteButton = this.$players.querySelector('.player:last-of-type .player__delete');
+			const $currentPlayer = this.$content.querySelector('.player:last-of-type');
+			// $currentPlayer.focus();
+
+			const $currentDeleteButton = this.$content.querySelector('.player:last-of-type .player__delete');
 			new DeleteButton($currentDeleteButton);
 		});
 	}
 }
 
-new AddButton(document.querySelector('.add-button'));
+new AddButton(document.querySelector('.intro'));

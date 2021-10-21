@@ -16,10 +16,22 @@
 </head>
 
 <body>
-	<h1 class="hidden-visually">MagiCount</h1>
-
-	<div class="players">
-		<button class="add-button">Add player</button>
+	<div class="content">
+		<div class="intro">
+			<div class="intro__inner">
+				<h1 class="intro__headline">zauberkaunter</h1>
+				<p><strong>zauberkaunter</strong> is a counter app for the trading card game <em>Magic: The Gathering</em>. It features life points, poison counters, and commander damage. The source code is available on <a href="https://github.com/zichy/magicount" target="_blank">GitHub</a>.
+			</div>
+			<div class="intro__actions">
+				<p class="intro__label">Create new player with starting life:</p>
+				<ul class="intro__list">
+					<li class="intro__list-item"><button class="add-button">20</button>
+					<li class="intro__list-item"><button class="add-button">30</button>
+					<li class="intro__list-item"><button class="add-button">40</button>
+				</ul>
+			</div>
+			
+		</div>
 	</div>
 
 	<div class="overlay" role="alert">
@@ -51,6 +63,5 @@
 	</template>
 
 	<script src="main.js"></script>
-
 </body>
 </html>
