@@ -448,7 +448,7 @@ body {
 /* Overlay */
 .overlay {
 	background-color: rgba(0, 0, 0, 0.95);
-	font-size: 3rem;
+	font-size: 2rem;
 	display: none;
 	align-items: center;
 	justify-content: center;
