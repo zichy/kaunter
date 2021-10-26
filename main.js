@@ -76,7 +76,8 @@ class ResetButton {
 		this.$el = $el;
 		this.$input = $input;
 		this.life = life;
-		this.$counters = $el.closest('.player').querySelectorAll('.counter__input');
+		this.$player = $el.closest('.player');
+		this.$counters = this.$player.querySelectorAll('.counter__input');
 
 		this.$el.addEventListener('click', (e) => {
 			e.preventDefault();
@@ -85,6 +86,9 @@ class ResetButton {
 			this.$counters.forEach(($counter) => {
 				$counter.value = 0;
 			});
+
+			new LifeCounter(this.$player);
+			new SecondaryCounters(this.$player);
 		});
 	}
 }
@@ -120,15 +124,13 @@ class Player {
 		this.$content = document.querySelector('.content');
 		this.$intro = document.querySelector('.intro');
 
-		// Get player template
+		// Include player template
 		this.playerTemplate = document.querySelector('.player-template');
 		this.clone = document.importNode(this.playerTemplate.content, true);
 		this.$el.appendChild(this.clone);
 
-		// Initialize counters
+		// Get current player
 		this.$currentPlayer = this.$content.querySelector('.player:last-of-type');
-		new LifeCounter(this.$currentPlayer);
-		new SecondaryCounters(this.$currentPlayer);
 
 		// Set life count
 		this.$currentLife = this.$currentPlayer.querySelector('.life__input');
@@ -141,6 +143,10 @@ class Player {
 		// Initialize reset button
 		this.$currentResetButton = this.$currentPlayer.querySelector('.counter__reset');
 		new ResetButton(this.$currentResetButton, this.$currentLife, this.life);
+
+		// Initialize counters
+		new LifeCounter(this.$currentPlayer);
+		new SecondaryCounters(this.$currentPlayer);
 
 		// Insert template
 		this.$el.appendChild(this.$intro);
