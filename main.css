@@ -123,7 +123,6 @@ input::-webkit-inner-spin-button {
 	margin: 0;
 }
 input:focus {
-	background-color: var(--c-black-10);
 	outline: none;
 }
 button {

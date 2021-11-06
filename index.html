@@ -60,7 +60,7 @@
 
 			<form class="counter">
 				<div class="life">
-					<input class="life__input" type="number" value="" min="-999" max="999" maxlength="4" aria-label="Life points">
+					<input class="life__input" type="number" value="" min="-999" max="999" maxlength="4" aria-label="Life points" readonly>
 
 					<button class="life__button life__button--1" data-count="-1">-1</button>
 					<button class="life__button life__button--2" data-count="+1">+1</button>
@@ -71,14 +71,14 @@
 				<div class="counter-group">
 					<fieldset class="counter__item">
 						<legend class="counter__legend"><abbr title="Poison counters">Poison</abbr></legend>
-						<input class="counter__input" type="number" value="0" min="0" max="10" aria-label="Poison counters">
+						<input class="counter__input" type="number" value="0" min="0" max="10" aria-label="Poison counters" readonly>
 						<button class="counter__button" data-count="+1">+1</button>
 						<button class="counter__button" data-count="-1">-1</button>
 					</fieldset>
 
 					<fieldset class="counter__item">
 						<legend class="counter__legend"><abbr title="Commander damage">Commander</abbr></legend>
-						<input class="counter__input" type="number" value="0" min="0" max="21" aria-label="Commander damage">
+						<input class="counter__input" type="number" value="0" min="0" max="21" aria-label="Commander damage" readonly>
 						<button class="counter__button" data-count="+1">+1</button>
 						<button class="counter__button" data-count="-1">-1</button>
 					</fieldset>
