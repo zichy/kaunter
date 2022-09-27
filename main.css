@@ -437,10 +437,14 @@ body {
 .counter__button:first-of-type {
 	grid-area: c;
 	border-left: 2px solid var(--c-black-10);
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
 }
 .counter__button:last-of-type {
 	grid-area: a;
 	border-right: 2px solid var(--c-black-10);
+	border-top-left-radius: 1rem;
+	border-bottom-left-radius: 1rem;
 }
 
 /* Overlay */
